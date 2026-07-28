@@ -1,16 +1,11 @@
-[build]
-  command = "npm run build"
-  publish = ".next"
+# Abraham Immobilien — statische Auslieferung (HTML/CSS/JS).
+# Kein Build-Schritt nötig; der komplette Ordner ist die Website.
+# Sicherheits-/Cache-Header liegen in _headers, Weiterleitungen in _redirects.
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build]
+  publish = "."
+  command = "true"
 
 [build.environment]
-  NODE_VERSION = "22"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+  # Verhindert, dass Netlify das parallel vorhandene Next.js-Projekt baut.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
