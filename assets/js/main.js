@@ -224,6 +224,7 @@
     "ct.form.title": "Send a message.",
     "ct.map.label": "Location",
     "ct.map.cta": "Open in Google Maps",
+    "ct.map.route": "Open directions",
 
     // --- Market (On-Market world) ---
     "mk.tag": "The marketplace of Abraham Immobilien",

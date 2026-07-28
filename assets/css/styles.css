@@ -878,6 +878,14 @@ em, .italic { font-style: italic; }
 .map-card:hover .map-card-cta .arrow { transform: translateX(4px); }
 .map-card-cta .arrow { transition: transform var(--dur) var(--ease); }
 
+/* Eingebettete, interaktive Karte (OpenStreetMap) */
+.map-embed { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper-2); }
+.map-embed iframe { display: block; width: 100%; height: clamp(240px, 34vh, 340px); border: 0; }
+.map-embed-foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 15px 18px; border-top: 1px solid var(--line); background: var(--white); }
+.map-embed-addr { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink); }
+.map-embed-addr svg { color: var(--gold-deep); flex: none; }
+
 /* =========================================================================
    MOBILE-OPTIMIERUNG (Überschriften volle Breite, Hero, Filter, Emblem)
    ========================================================================= */
