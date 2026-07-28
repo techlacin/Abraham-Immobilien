@@ -1,0 +1,11 @@
+# Abraham Immobilien — statische Auslieferung (HTML/CSS/JS).
+# Kein Build-Schritt nötig; der komplette Ordner ist die Website.
+# Sicherheits-/Cache-Header liegen in _headers, Weiterleitungen in _redirects.
+
+[build]
+  publish = "."
+  command = "true"
+
+[build.environment]
+  # Verhindert, dass Netlify das parallel vorhandene Next.js-Projekt baut.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
