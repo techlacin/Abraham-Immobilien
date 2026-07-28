@@ -365,8 +365,29 @@
     initCountUp();
     initParallax();
     initRechner();
+    initMap();
     initYear();
   });
+
+  /* ---------------------------------------------------------------
+     Standort-Karte (Leaflet + OpenStreetMap, selbst gehostet)
+  --------------------------------------------------------------- */
+  function initMap() {
+    var el = document.getElementById("map");
+    if (!el || typeof L === "undefined") return;
+    var lat = parseFloat(el.getAttribute("data-lat"));
+    var lon = parseFloat(el.getAttribute("data-lon"));
+    var zoom = parseInt(el.getAttribute("data-zoom"), 10) || 15;
+    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true }).setView([lat, lon], zoom);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+    }).addTo(map);
+    var icon = L.divIcon({ className: "map-pin", html: '<span class="map-pin-dot"></span>', iconSize: [28, 28], iconAnchor: [14, 14] });
+    L.marker([lat, lon], { icon: icon, title: "Abraham Immobilien", keyboard: false }).addTo(map);
+    // Größe nach Layout-Aufbau korrigieren (Leaflet in verstecktem/animiertem Container)
+    setTimeout(function () { map.invalidateSize(); }, 300);
+  }
 
   /* ---------------------------------------------------------------
      Immobilien-Wertrechner — instant, non-binding estimate from
