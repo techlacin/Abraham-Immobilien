@@ -886,6 +886,28 @@ em, .italic { font-style: italic; }
 .map-embed-addr { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink); }
 .map-embed-addr svg { color: var(--gold-deep); flex: none; }
 
+/* Große, gerahmte Standort-Karte (Leaflet) */
+.map-frame { position: relative; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: var(--paper-2); }
+.map-frame .tick { position: absolute; width: 16px; height: 16px; border-color: var(--line-gold); z-index: 500; pointer-events: none; }
+.map-frame .tick.tl { top: 14px; left: 14px; border-top: 1px solid; border-left: 1px solid; }
+.map-frame .tick.tr { top: 14px; right: 14px; border-top: 1px solid; border-right: 1px solid; }
+.map-frame .tick.bl { bottom: 70px; left: 14px; border-bottom: 1px solid; border-left: 1px solid; }
+.map-frame .tick.br { bottom: 70px; right: 14px; border-bottom: 1px solid; border-right: 1px solid; }
+.map-canvas { width: 100%; height: clamp(360px, 54vh, 580px); background: var(--paper-2); }
+.map-pin-dot { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--gold);
+  border: 3px solid #fff; box-shadow: 0 0 0 1px rgba(10,10,10,0.3), 0 5px 12px rgba(0,0,0,0.35); }
+/* Leaflet-Steuerung dezent einpassen, Zoom unter die obere Eck-Marke schieben */
+.map-frame .leaflet-control-zoom { margin: 34px 0 0 34px !important; border: 1px solid var(--line) !important; }
+.map-frame .leaflet-control-zoom a { color: var(--ink); background: rgba(255,255,255,0.95); }
+.map-frame .leaflet-control-attribution { font-size: 10px; background: rgba(255,255,255,0.82); }
+.map-frame .map-embed-foot { border-top: 1px solid var(--line); background: var(--white); }
+@media (max-width: 680px) {
+  .map-canvas { height: clamp(280px, 46vh, 380px); }
+  .map-frame .tick { display: none; }
+  .map-frame .leaflet-control-zoom { margin: 10px 0 0 10px !important; }
+}
+
 /* =========================================================================
    MOBILE-OPTIMIERUNG (Überschriften volle Breite, Hero, Filter, Emblem)
    ========================================================================= */
@@ -958,8 +980,9 @@ em, .italic { font-style: italic; }
   .nav-right > .btn { display: none; }      /* hide inline CTA; lives in mobile drawer */
   .nav-right { gap: 12px; }
   .hero { min-height: auto; align-items: flex-start; padding-top: 116px; padding-bottom: 48px; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-media { display: none; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-media { align-self: auto; }
+  .hero-img { aspect-ratio: 4 / 3.1; min-height: 240px; }
   .hero-copy { max-width: 24ch; }
   .hero-strip { flex-wrap: wrap; gap: 20px 28px; }
   .hero-strip .hs-item { border-left: 0 !important; padding-left: 0 !important; }
