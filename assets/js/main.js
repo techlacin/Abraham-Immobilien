@@ -31,7 +31,7 @@
     "footer.imprint": "Imprint",
     "footer.privacy": "Privacy",
     "footer.rights": "All rights reserved.",
-    "footer.dev": "Developed by",
+    "footer.dev": "Web design & development by",
     "footer.built": "Off-Market world",
     "footer.social": "Follow",
 
@@ -222,6 +222,9 @@
     "ct.info.emailk": "Email", "ct.info.phonek": "Phone", "ct.info.addrk": "Office", "ct.info.hoursk": "By appointment",
     "ct.info.hoursv": "Meetings by arrangement",
     "ct.form.title": "Send a message.",
+    "ct.map.label": "Location",
+    "ct.map.cta": "Open in Google Maps",
+    "ct.map.route": "Open directions",
 
     // --- Market (On-Market world) ---
     "mk.tag": "The marketplace of Abraham Immobilien",

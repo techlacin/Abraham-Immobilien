@@ -322,9 +322,10 @@ em, .italic { font-style: italic; }
 
 /* ---------- Network marquee ---------- */
 .network { overflow: hidden; border-block: 1px solid var(--line); }
-.network-track { display: flex; gap: 0; white-space: nowrap; will-change: transform; animation: marquee 42s linear infinite; }
+.network-track { display: flex; gap: 0; white-space: nowrap; will-change: transform; animation: marquee 20s linear infinite; }
 .network:hover .network-track { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) { .network-track { animation: none; flex-wrap: wrap; white-space: normal; } }
+@media (max-width: 700px) { .network-track { animation-duration: 16s; } }
+@media (prefers-reduced-motion: reduce) { .network { display: none; } }
 .network-item {
   font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 2.3rem); font-style: italic;
   color: var(--ink-40); padding: 26px clamp(24px, 3vw, 46px); display: inline-flex; align-items: center; gap: clamp(24px,3vw,46px);
@@ -852,6 +853,67 @@ em, .italic { font-style: italic; }
 .rc-cta { margin-top: 28px; width: 100%; justify-content: center; }
 @media (max-width: 900px) { .rc-result { position: static; } }
 @media (max-width: 520px) { .rc-panel { grid-template-columns: 1fr; } }
+
+/* =========================================================================
+   Market-Filter: Gruppenlabels (Typ / Status) — behebt doppeltes "Alle"
+   ========================================================================= */
+.filter-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); align-self: center; margin-right: 2px; white-space: nowrap; }
+
+/* Standort-Karte (DSGVO-freundlich: lädt keinen externen Dienst ungefragt) */
+.map-card { display: flex; align-items: center; gap: 20px; text-decoration: none;
+  background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 32px); position: relative; overflow: hidden;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease); }
+.map-card::after { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 140% at 90% 10%, rgba(184,149,46,0.10), transparent 60%); pointer-events: none; }
+.map-card:hover { border-color: var(--line-gold); background: var(--white); }
+.map-card-pin { flex: none; width: 56px; height: 56px; border: 1px solid var(--line-gold);
+  border-radius: 50%; display: grid; place-items: center; color: var(--gold-deep); }
+.map-card-body { display: flex; flex-direction: column; gap: 6px; z-index: 1; }
+.map-card-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.map-card-addr { font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--ink); }
+.map-card-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-deep); }
+.map-card:hover .map-card-cta .arrow { transform: translateX(4px); }
+.map-card-cta .arrow { transition: transform var(--dur) var(--ease); }
+
+/* Eingebettete, interaktive Karte (OpenStreetMap) */
+.map-embed { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper-2); }
+.map-embed iframe { display: block; width: 100%; height: clamp(240px, 34vh, 340px); border: 0; }
+.map-embed-foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 15px 18px; border-top: 1px solid var(--line); background: var(--white); }
+.map-embed-addr { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink); }
+.map-embed-addr svg { color: var(--gold-deep); flex: none; }
+
+/* =========================================================================
+   MOBILE-OPTIMIERUNG (Überschriften volle Breite, Hero, Filter, Emblem)
+   ========================================================================= */
+@media (max-width: 680px) {
+  /* Überschriften nutzen die volle Breite statt schmaler ch-Spalten */
+  .display, .h1, .h2, .statement, .cine-statement,
+  .hero-copy, .hero-copy .display, .hero-copy .hero-sub,
+  .page-hero .display, .zg-hero .display, .zg-hero .lead,
+  .cta-band .h1, .lead { max-width: 100% !important; }
+
+  .display { font-size: clamp(2.3rem, 11.5vw, 3.4rem); line-height: 1.06; }
+  .h1 { font-size: clamp(2rem, 9vw, 2.9rem); }
+
+  /* Hero: sauberer Abstand, kein schmaler Textblock */
+  .hero { padding-top: 108px; padding-bottom: 44px; }
+  .hero-copy .hero-sub { margin-top: 22px; }
+  .hero-actions { margin-top: 30px; }
+
+  /* Cinematic-Emblem: kleiner, bricht das Layout nicht */
+  .cine-emblem { width: clamp(150px, 55vw, 240px); right: -24px; opacity: 0.10; }
+  .cinematic { min-height: clamp(360px, 70vh, 480px); }
+
+  /* Market-Filter: jede Gruppe eigene Zeile mit Label — kein doppeltes "Alle" */
+  .filters { flex-direction: column; align-items: flex-start; gap: 12px; top: 88px; }
+  .filter-group { width: 100%; }
+  .filter-sep { display: none; }
+  .result-count { margin-left: 0; margin-top: 2px; }
+}
 
 /* =========================================================================
    LOGO in footer + developer credit
