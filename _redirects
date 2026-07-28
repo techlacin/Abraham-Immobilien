@@ -1,0 +1,3 @@
+# Kanonische Domain erzwingen: apex -> www (Backup; primär in Netlify-Domaineinstellungen)
+http://abraham-immobilien.de/*    https://www.abraham-immobilien.de/:splat    301!
+https://abraham-immobilien.de/*   https://www.abraham-immobilien.de/:splat    301!
