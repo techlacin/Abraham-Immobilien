@@ -907,6 +907,12 @@ em, .italic { font-style: italic; }
   .map-frame .tick { display: none; }
   .map-frame .leaflet-control-zoom { margin: 10px 0 0 10px !important; }
 }
+/* Karte in der Kontakt-Spalte: füllt die Höhe bis zur Button-Ebene */
+@media (min-width: 900px) {
+  .ct-info { display: flex; flex-direction: column; }
+  .ct-map { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 340px; }
+  .ct-map .map-canvas { flex: 1 1 auto; height: auto; min-height: 260px; }
+}
 
 /* =========================================================================
    MOBILE-OPTIMIERUNG (Überschriften volle Breite, Hero, Filter, Emblem)
