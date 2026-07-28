@@ -1,0 +1,55 @@
+import { defineField, defineType } from "sanity";
+
+export const immobilie = defineType({
+  name: "immobilie",
+  title: "Immobilie",
+  type: "document",
+  fields: [
+    defineField({ name: "titel", type: "string", title: "Titel", validation: (r) => r.required() }),
+    defineField({
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: { source: "titel" },
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "objekttyp",
+      type: "string",
+      title: "Objekttyp",
+      options: { list: ["Wohnung", "Haus", "Gewerbe", "Grundstück"] },
+    }),
+    defineField({
+      name: "angebotstyp",
+      type: "string",
+      title: "Kauf oder Miete",
+      options: { list: ["Kauf", "Miete"] },
+    }),
+    defineField({ name: "preis", type: "number", title: "Preis (€)" }),
+    defineField({ name: "flaeche", type: "number", title: "Fläche (m²)" }),
+    defineField({ name: "zimmer", type: "number", title: "Zimmer" }),
+    defineField({ name: "baujahr", type: "number", title: "Baujahr" }),
+    defineField({ name: "bezirk", type: "string", title: "Bezirk" }),
+    defineField({ name: "adresse", type: "string", title: "Adresse (grob)" }),
+    defineField({ name: "koordinaten", type: "geopoint", title: "Koordinaten" }),
+    defineField({
+      name: "bilder",
+      type: "array",
+      title: "Bilder",
+      of: [{ type: "image", options: { hotspot: true } }],
+    }),
+    defineField({ name: "grundriss", type: "file", title: "Grundriss (PDF)" }),
+    defineField({ name: "expose", type: "file", title: "Exposé (PDF)" }),
+    defineField({
+      name: "beschreibung",
+      type: "array",
+      title: "Beschreibung (Rich Text)",
+      of: [{ type: "block" }],
+    }),
+    defineField({ name: "verfuegbar", type: "boolean", title: "Verfügbar", initialValue: true }),
+    defineField({ name: "featured", type: "boolean", title: "Auf Startseite", initialValue: false }),
+    defineField({ name: "seoTitel", type: "string", title: "SEO Titel" }),
+    defineField({ name: "seoDesc", type: "text", title: "SEO Beschreibung", rows: 3 }),
+    defineField({ name: "openimmoId", type: "string", title: "OpenImmo ID", hidden: true }),
+  ],
+});

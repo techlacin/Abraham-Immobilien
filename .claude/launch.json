@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "env": { "PATH": "${env:HOME}/.local/node/bin:${env:PATH}" }
+    },
+    {
+      "name": "abraham-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "/Users/ali/abraham-immobilien"],
+      "port": 4321
+    }
+  ]
+}

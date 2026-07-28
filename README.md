@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abraham Immobilien Advisors GmbH — Website
 
-## Getting Started
+Off-Market-Immobilienspezialist, Berlin. Ruhig, souverän, exklusiv — und trotzdem nahbar.
 
-First, run the development server:
+## Tech-Stack
+
+| Bereich | Technologie |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Sprache | TypeScript (strict) |
+| Styling | Tailwind CSS v4 (Design-Tokens per `@theme` in `src/app/globals.css`) |
+| CMS | Sanity (Studio unter `/studio`) |
+| Formulare | React Hook Form + Zod |
+| E-Mail | Resend |
+| Karten | Google Maps (`@vis.gl/react-google-maps`) |
+| Analytics | GA4 via `@next/third-parties` — lädt nur nach Cookie-Zustimmung |
+| Animation | Framer Motion (nur dezentes Scroll-Einblenden) |
+| Hosting | Netlify (`@netlify/plugin-nextjs`) |
+
+## Lokales Setup
+
+Voraussetzung: Node.js ≥ 20.9 (empfohlen: 22).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # Werte eintragen, siehe unten
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Umgebungsvariablen (`.env.local`)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Zweck |
+|---|---|
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Sanity-Projekt-ID (siehe „Sanity einrichten") |
+| `NEXT_PUBLIC_SANITY_DATASET` | i. d. R. `production` |
+| `SANITY_API_TOKEN` | Nur nötig für Schreibzugriffe/Preview |
+| `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Karte auf der Kontaktseite (ohne Key: Platzhalter) |
+| `NEXT_PUBLIC_GA_ID` | GA4-Measurement-ID (`G-…`); ohne ID lädt kein Analytics |
+| `RESEND_API_KEY` | E-Mail-Versand der Formulare |
+| `CONTACT_EMAIL` | Zielpostfach, Standard `info@abraham-immobilien.de` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Ohne Keys läuft die Seite trotzdem:** Karte und Team-Sektion zeigen Platzhalter,
+Formulare melden einen Versandfehler, Analytics bleibt aus.
 
-## Learn More
+### Sanity einrichten (einmalig)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx sanity@latest init --env .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Beim Init ein neues Projekt anlegen; die Projekt-ID landet in `.env.local`.
+Schemas liegen in `sanity/schemas/` (Immobilie, Teammitglied), das Studio ist
+unter `http://localhost:3000/studio` eingebunden.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Struktur
 
-## Deploy on Vercel
+```
+src/
+├── app/                  # Routen (App Router) + API (contact, off-market)
+├── components/
+│   ├── layout/           # Navbar, Footer, CookieBanner, Analytics, PageHeader
+│   ├── home/             # Die 7 Startseiten-Sektionen
+│   ├── off-market/       # Investor- und Eigentümer-Formular
+│   ├── kontakt/          # Kontaktformular + Standortkarte
+│   ├── ui/               # Button, GoldDivider, SectionLabel, Formular-Bausteine …
+│   └── seo/              # JSON-LD (RealEstateAgent)
+├── lib/                  # Sanity-Client/Queries, Resend, Zod-Schemas
+└── types/                # Gemeinsame TypeScript-Typen
+sanity/schemas/           # Sanity-Dokumenttypen
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design-System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Farben: Off-White `#FAFAF8`, Tiefschwarz `#0A0A0A`, Gold `#D4AF5A / #C9A227 / #B8952E`, Grau `#9A9A9A`
+- Gold nur als Linie, Border, Icon oder kleiner Button — nie als Fläche (max. 5–10 %)
+- Typografie: Cormorant Garamond (Headlines), Inter (Body); beide via `next/font`
+- Alles eckig: `rounded-none` ist Markensignatur
+- Fotografie: echte Berliner Architektur, S/W — aktuell beschriftete Platzhalter (`ImagePlaceholder`)
+
+## Formulare & Spam-Schutz
+
+Alle Formulare validieren client- und serverseitig mit denselben Zod-Schemas
+(`src/lib/validation.ts`). Ein unsichtbares Honeypot-Feld (`firma_webseite`)
+fängt Bots ab — bei Befüllung antwortet die API still mit 200, ohne E-Mail.
+Bestätigungs-E-Mail an den Absender inklusive.
+
+## Deployment (Netlify)
+
+`netlify.toml` liegt bei (Plugin `@netlify/plugin-nextjs`, Security-Header,
+Node 22). Umgebungsvariablen im Netlify-Dashboard hinterlegen — nie committen
+(`.env*` ist bis auf `.env.example` gitignored).
+
+## Checks
+
+```bash
+npm run build   # Produktions-Build (muss ohne Fehler durchlaufen)
+npm run lint    # ESLint inkl. React-Hooks-Regeln
+```
+
+---
+
+Abraham Immobilien Advisors GmbH · Kurfürstendamm 15, 10719 Berlin
