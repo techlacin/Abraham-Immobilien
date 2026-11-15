@@ -1,0 +1,72 @@
+<!--META
+{
+ "file": "rechner.html",
+ "title": "Immobilienpreis berechnen: Preisrechner Berlin | Abraham Immobilien",
+ "desc": "Was ist Ihre Wohnung oder Ihr Haus in Berlin wert? Der Preisrechner zeigt Ihnen sofort eine erste Preisspanne nach Lage, Art, Wohnfläche und Zimmern.",
+ "world": "on",
+ "cur": "/rechner.html",
+ "og": "/assets/hero-berlin.jpg",
+ "noindex": false,
+ "jsonld": []
+}
+META-->
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Brotkrumen" style="padding-top:0"><a href="/immobilie-verkaufen.html">Startseite</a> / <span aria-current="page">Immobilie bewerten</span></nav>
+        <h1>Was ist Ihre Immobilie wert?</h1>
+        <p class="lead">Ein paar Angaben genügen für eine erste Preisspanne. Kostenlos, ohne Anmeldung und sofort sichtbar.</p>
+        <ul class="ticks ticks--left"><li>Ergebnis in einer Minute</li><li>Für Wohnungen und Häuser in Berlin</li><li>Persönliche Bewertung auf Wunsch</li></ul>
+      </div>
+    </section>
+    <section class="wrap" style="padding-block:clamp(40px,5vw,64px)">
+      <div class="calc">
+        <div class="form calc-in" data-rechner>
+          <p class="calc-h f--full">Ihre Immobilie</p>
+          <div class="f f--full"><label for="rc-lage">Lage</label><select id="rc-lage" name="lage"><option value="mitte">Mitte</option><option value="cw">Charlottenburg-Wilmersdorf</option><option value="fk">Friedrichshain-Kreuzberg</option><option value="pankow">Pankow</option><option value="sz">Steglitz-Zehlendorf</option><option value="ts">Tempelhof-Schöneberg</option><option value="neukoelln">Neukölln</option><option value="tk">Treptow-Köpenick</option><option value="licht">Lichtenberg</option><option value="rd">Reinickendorf</option><option value="spandau">Spandau</option><option value="mh">Marzahn-Hellersdorf</option></select></div>
+          <div class="f"><label for="rc-art">Art</label><select id="rc-art" name="art"><option value="wohnung">Wohnung</option><option value="haus">Haus</option></select></div>
+          <div class="f"><label for="rc-zustand">Zustand</label><select id="rc-zustand" name="zustand"><option value="gepflegt">Gepflegt</option><option value="saniert">Saniert</option><option value="neu">Neubau</option><option value="reno">Renovierungsbedürftig</option></select></div>
+          <div class="f"><label for="rc-flaeche">Wohnfläche in m²</label><input id="rc-flaeche" name="flaeche" type="number" inputmode="numeric" min="15" max="1000" value="80"></div>
+          <div class="f"><label for="rc-zimmer">Zimmer</label><select id="rc-zimmer" name="zimmer"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5 oder mehr</option></select></div>
+          <p class="form-note">Mehrfamilienhaus oder Grundstück? Dafür reicht ein Rechner nicht. <a href="/wohnung-haus-verkaufen.html#anfrage">Sprechen Sie uns an.</a></p>
+        </div>
+        <aside class="calc-out" aria-live="polite">
+          <p class="calc-h">Erste Preisspanne</p>
+          <div class="calc-range num" id="rc-range">Bitte Wohnfläche eintragen</div>
+          <p class="calc-per" id="rc-per"></p>
+          <p class="calc-per">Eine Orientierung auf Basis von Richtwerten, kein Gutachten. Für einen genauen Wert sehen wir uns Ihre Immobilie an.</p>
+          <form class="form" id="rc" name="rechner-anfrage" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="hp-firma">
+          <input type="hidden" name="form-name" value="rechner-anfrage"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="referrer"><input type="hidden" name="berechnung" id="rc-hidden">
+          <p class="hp" aria-hidden="true"><label>Firma <input name="hp-firma" tabindex="-1" autocomplete="off"></label></p>
+          <p class="calc-h f--full" style="margin-top:4px">Genauen Wert besprechen</p>
+          <div class="f f--full"><label for="rc-name">Name <span class="req">*</span></label><input id="rc-name" name="name" type="text" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+          <div class="f"><label for="rc-email">E-Mail <span class="req">*</span></label><input id="rc-email" name="email" type="email" required autocomplete="email" placeholder="ihr@beispiel.de"></div>
+          <div class="f"><label for="rc-telefon">Telefon</label><input id="rc-telefon" name="telefon" type="tel" autocomplete="tel" placeholder="Optional"></div>
+          {{form-foot}}
+          <button class="btn btn--gold btn--wide" type="submit">Bewertung vor Ort anfragen</button>
+          <p class="form-req"><span class="req">*</span> Pflichtfeld</p>
+          <p class="form-err" role="alert" hidden>Ihre Anfrage wurde nicht gesendet. Bitte versuchen Sie es erneut oder rufen Sie uns an: <a href="tel:+493045032807">030 / 45032807</a>.</p>
+        </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="sec sand">
+      <div class="wrap">
+        <div class="head"><h2>So geht es weiter</h2><p>Der Rechner ist ein erster Schritt. Den genauen Wert ermitteln wir gemeinsam mit Ihnen.</p></div>
+        <ol class="steps">
+          <li><h3>Erste Spanne</h3><p>Sie sehen sofort, in welchem Bereich Ihre Immobilie ungefähr liegt.</p></li>
+          <li><h3>Termin vor Ort</h3><p>Wir sehen uns Zustand, Ausstattung und Lage genau an.</p></li>
+          <li><h3>Realistischer Preis</h3><p>Sie erhalten einen begründeten Preis und eine Einschätzung zum Verkauf.</p></li>
+          <li><h3>Ihre Entscheidung</h3><p>Ob und wann Sie verkaufen, entscheiden Sie in Ruhe. Die Bewertung ist unverbindlich.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <div class="rg-more-head"><h2>Mehr zur Bewertung</h2><a class="link" href="/lexikon.html">Alle Artikel im Ratgeber</a></div>
+        <div class="rg-grid">
+          {{ratgeber-cards}}
+        </div>
+      </div>
+    </section>

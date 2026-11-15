@@ -1,3 +1,20 @@
 # Kanonische Domain erzwingen: apex -> www (Backup; primär in Netlify-Domaineinstellungen)
 http://abraham-immobilien.de/*    https://www.abraham-immobilien.de/:splat    301!
 https://abraham-immobilien.de/*   https://www.abraham-immobilien.de/:splat    301!
+
+# Alte Seiten der vorherigen Struktur
+/zugang.html       /#gespraech                  301
+/zugang            /#gespraech                  301
+/leistungen.html   /immobilie-verkaufen.html    301
+/leistungen        /immobilie-verkaufen.html    301
+/market.html       /angebote.html               301
+/market            /angebote.html               301
+/objekt.html       /angebote.html               301
+/objekt            /angebote.html               301
+
+# Landingpage für Anzeigen liegt auf eigener Subdomain
+/verkaufen         https://verkaufen.abraham-immobilien.de/    301
+/verkaufen.html    https://verkaufen.abraham-immobilien.de/    301
+
+# Hilfsskript zum Erzeugen der Seiten nicht ausliefern
+/tools/*          /404.html                    404!

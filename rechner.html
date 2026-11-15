@@ -1,220 +1,195 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-world="on" data-world-fixed="1">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Immobilien-Wertrechner Berlin — Abraham Immobilien</title>
-  <meta name="description" content="Immobilien-Wertrechner für Berlin: ermitteln Sie in Sekunden einen unverbindlichen Richtwert Ihrer Immobilie — anschließend bewerten wir persönlich und präzise." />
-  <meta name="theme-color" content="#FAFAF8" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="canonical" href="https://www.abraham-immobilien.de/rechner" />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Abraham Immobilien" />
-  <meta property="og:locale" content="de_DE" />
-  <meta property="og:title" content="Immobilien-Wertrechner Berlin — Abraham Immobilien" />
-  <meta property="og:description" content="Immobilien-Wertrechner für Berlin: ermitteln Sie in Sekunden einen unverbindlichen Richtwert Ihrer Immobilie — anschließend bewerten wir persönlich und präzise." />
-  <meta property="og:url" content="https://www.abraham-immobilien.de/rechner" />
-  <meta property="og:image" content="https://www.abraham-immobilien.de/assets/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Immobilien-Wertrechner Berlin — Abraham Immobilien" />
-  <meta name="twitter:description" content="Immobilien-Wertrechner für Berlin: ermitteln Sie in Sekunden einen unverbindlichen Richtwert Ihrer Immobilie — anschließend bewerten wir persönlich und präzise." />
-  <meta name="twitter:image" content="https://www.abraham-immobilien.de/assets/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.abraham-immobilien.de/"},{"@type":"ListItem","position":2,"name":"Preisrechner","item":"https://www.abraham-immobilien.de/rechner"}]}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Immobilienpreis berechnen: Preisrechner Berlin | Abraham Immobilien</title>
+  <meta name="description" content="Was ist Ihre Wohnung oder Ihr Haus in Berlin wert? Der Preisrechner zeigt Ihnen sofort eine erste Preisspanne nach Lage, Art, Wohnfläche und Zimmern.">
+  <link rel="canonical" href="https://www.abraham-immobilien.de/rechner.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Abraham Immobilien">
+  <meta property="og:title" content="Immobilienpreis berechnen: Preisrechner Berlin | Abraham Immobilien">
+  <meta property="og:description" content="Was ist Ihre Wohnung oder Ihr Haus in Berlin wert? Der Preisrechner zeigt Ihnen sofort eine erste Preisspanne nach Lage, Art, Wohnfläche und Zimmern.">
+  <meta property="og:url" content="https://www.abraham-immobilien.de/rechner.html">
+  <meta property="og:image" content="https://www.abraham-immobilien.de/assets/hero-berlin.jpg">
+  <meta name="theme-color" content="#1F1D1B">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/fonts.css?v=35">
+  <link rel="stylesheet" href="/assets/css/site.css?v=35">
+  
 </head>
 <body>
-
-  <header class="site-header is-solid">
-    <div class="wrap">
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="index.html" class="brand" aria-label="Abraham Immobilien — Startseite">
-          <span class="brand-mark">A</span>
-          <span class="brand-lockup">Abraham<small data-i18n="brand.sub">Berlin · Off-Market</small></span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html" data-i18n="nav.home">Home</a>
-          <a href="zugang.html" data-i18n="nav.access">Off-Market Zugang</a>
-          <a href="ueber-uns.html" data-i18n="nav.about">Über uns</a>
-          <a href="leistungen.html" data-i18n="nav.services">Leistungen</a>
-          <a href="rechner.html" aria-current="page" data-i18n="nav.calc">Preisrechner</a>
-          <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-          <a href="market.html" class="nav-market"><span data-i18n="nav.market">Market</span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="nav-right">
-          <div class="lang-toggle" role="group" aria-label="Sprache / Language">
-            <button type="button" data-lang="de" class="is-active" aria-pressed="true">DE</button>
-            <span class="lang-sep">/</span>
-            <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          </div>
-          <a href="zugang.html" class="btn btn--gold" style="padding:12px 22px" data-i18n="cta.request">Zugang anfragen</a>
-          <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
-        </div>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <div class="strip">
+    <div class="wrap strip-in">
+      <nav class="switch" aria-label="Bereich wählen: Off-Market oder On-Market">
+        <a class="is-off" href="/"><b>Off-Market</b><span>Diskreter Verkauf von Anlageimmobilien</span></a>
+        <a class="is-on" href="/immobilie-verkaufen.html"><b>On-Market</b><span>Wohnung, Haus, Grundstück</span></a>
       </nav>
-    </div>
-  </header>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html"><span data-i18n="nav.home">Home</span><span class="idx">01</span></a>
-    <a href="zugang.html"><span data-i18n="nav.access">Off-Market Zugang</span><span class="idx">02</span></a>
-    <a href="ueber-uns.html"><span data-i18n="nav.about">Über uns</span><span class="idx">03</span></a>
-    <a href="leistungen.html"><span data-i18n="nav.services">Leistungen</span><span class="idx">04</span></a>
-    <a href="rechner.html"><span data-i18n="nav.calc">Preisrechner</span><span class="idx">05</span></a>
-    <a href="kontakt.html"><span data-i18n="nav.contact">Kontakt</span><span class="idx">06</span></a>
-    <a href="market.html"><span data-i18n="nav.market">Market</span><span class="idx">07</span></a>
-    <div class="mobile-meta">
-      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="strip-info">
+        <span class="strip-addr">Kurfürstendamm 15, 10719 Berlin</span>
+        <a href="tel:+493045032807">030 / 45032807</a>
+      </div>
     </div>
   </div>
-
-  <main>
-    <section class="page-hero wrap">
-      <nav class="breadcrumb reveal" aria-label="Brotkrumen">
-        <a href="index.html" data-i18n="nav.home">Home</a><span class="sep">/</span><span data-i18n="rc.crumb">Preisrechner</span>
+  <header class="hdr">
+    <div class="wrap hbar">
+      
+      <a class="logo only-on" href="/immobilie-verkaufen.html" aria-label="Abraham Immobilien, Startseite On-Market"><img src="/assets/logo.webp" alt="Abraham Immobilien" width="74" height="74"></a>
+      
+      <nav class="nav only-on" aria-label="Hauptnavigation">
+        <a href="/wohnung-haus-verkaufen.html">Verkaufen</a>
+        <a href="/rechner.html" aria-current="page">Bewerten</a>
+        <a href="/angebote.html">Angebote</a>
+        <a href="/lexikon.html">Ratgeber</a>
+        <a href="/ueber-uns.html">Unternehmen</a>
+        <a href="/kontakt.html">Kontakt</a>
+        <a class="btn btn--sm" href="/wohnung-haus-verkaufen.html#anfrage">Jetzt kontaktieren</a>
       </nav>
-      <div class="two-col ratio-6040" style="margin-top:22px; align-items:end">
-        <div>
-          <span class="eyebrow reveal" data-i18n="rc.eyebrow">Immobilien-Wertrechner</span>
-          <h1 class="display reveal" data-delay="1" data-i18n="rc.title">Was ist Ihre Immobilie wert?</h1>
+      <button class="burger" type="button" data-burger aria-expanded="false" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+  </header>
+  <main id="inhalt">
+    <section class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Brotkrumen" style="padding-top:0"><a href="/immobilie-verkaufen.html">Startseite</a> / <span aria-current="page">Immobilie bewerten</span></nav>
+        <h1>Was ist Ihre Immobilie wert?</h1>
+        <p class="lead">Ein paar Angaben genügen für eine erste Preisspanne. Kostenlos, ohne Anmeldung und sofort sichtbar.</p>
+        <ul class="ticks ticks--left"><li>Ergebnis in einer Minute</li><li>Für Wohnungen und Häuser in Berlin</li><li>Persönliche Bewertung auf Wunsch</li></ul>
+      </div>
+    </section>
+    <section class="wrap" style="padding-block:clamp(40px,5vw,64px)">
+      <div class="calc">
+        <div class="form calc-in" data-rechner>
+          <p class="calc-h f--full">Ihre Immobilie</p>
+          <div class="f f--full"><label for="rc-lage">Lage</label><select id="rc-lage" name="lage"><option value="mitte">Mitte</option><option value="cw">Charlottenburg-Wilmersdorf</option><option value="fk">Friedrichshain-Kreuzberg</option><option value="pankow">Pankow</option><option value="sz">Steglitz-Zehlendorf</option><option value="ts">Tempelhof-Schöneberg</option><option value="neukoelln">Neukölln</option><option value="tk">Treptow-Köpenick</option><option value="licht">Lichtenberg</option><option value="rd">Reinickendorf</option><option value="spandau">Spandau</option><option value="mh">Marzahn-Hellersdorf</option></select></div>
+          <div class="f"><label for="rc-art">Art</label><select id="rc-art" name="art"><option value="wohnung">Wohnung</option><option value="haus">Haus</option></select></div>
+          <div class="f"><label for="rc-zustand">Zustand</label><select id="rc-zustand" name="zustand"><option value="gepflegt">Gepflegt</option><option value="saniert">Saniert</option><option value="neu">Neubau</option><option value="reno">Renovierungsbedürftig</option></select></div>
+          <div class="f"><label for="rc-flaeche">Wohnfläche in m²</label><input id="rc-flaeche" name="flaeche" type="number" inputmode="numeric" min="15" max="1000" value="80"></div>
+          <div class="f"><label for="rc-zimmer">Zimmer</label><select id="rc-zimmer" name="zimmer"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5 oder mehr</option></select></div>
+          <p class="form-note">Mehrfamilienhaus oder Grundstück? Dafür reicht ein Rechner nicht. <a href="/wohnung-haus-verkaufen.html#anfrage">Sprechen Sie uns an.</a></p>
         </div>
-        <p class="lead reveal" data-delay="2" data-i18n="rc.lead">Ein erster, unverbindlicher Richtwert in Sekunden — auf Basis aktueller Berliner Marktdaten. Für eine präzise Bewertung sprechen wir persönlich.</p>
+        <aside class="calc-out" aria-live="polite">
+          <p class="calc-h">Erste Preisspanne</p>
+          <div class="calc-range num" id="rc-range">Bitte Wohnfläche eintragen</div>
+          <p class="calc-per" id="rc-per"></p>
+          <p class="calc-per">Eine Orientierung auf Basis von Richtwerten, kein Gutachten. Für einen genauen Wert sehen wir uns Ihre Immobilie an.</p>
+          <form class="form" id="rc" name="rechner-anfrage" method="POST" action="/danke.html" data-netlify="true" netlify-honeypot="hp-firma">
+          <input type="hidden" name="form-name" value="rechner-anfrage"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="referrer"><input type="hidden" name="berechnung" id="rc-hidden">
+          <p class="hp" aria-hidden="true"><label>Firma <input name="hp-firma" tabindex="-1" autocomplete="off"></label></p>
+          <p class="calc-h f--full" style="margin-top:4px">Genauen Wert besprechen</p>
+          <div class="f f--full"><label for="rc-name">Name <span class="req">*</span></label><input id="rc-name" name="name" type="text" required autocomplete="name" placeholder="Vor- und Nachname"></div>
+          <div class="f"><label for="rc-email">E-Mail <span class="req">*</span></label><input id="rc-email" name="email" type="email" required autocomplete="email" placeholder="ihr@beispiel.de"></div>
+          <div class="f"><label for="rc-telefon">Telefon</label><input id="rc-telefon" name="telefon" type="tel" autocomplete="tel" placeholder="Optional"></div>
+          <label class="consent f--full"><input type="checkbox" name="einwilligung" value="ja" required><span>Ich bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. <a href="/datenschutz.html">Datenschutz</a>. <span class="req">*</span></span></label>
+          <button class="btn btn--gold btn--wide" type="submit">Bewertung vor Ort anfragen</button>
+          <p class="form-req"><span class="req">*</span> Pflichtfeld</p>
+          <p class="form-err" role="alert" hidden>Ihre Anfrage wurde nicht gesendet. Bitte versuchen Sie es erneut oder rufen Sie uns an: <a href="tel:+493045032807">030 / 45032807</a>.</p>
+        </form>
+        </aside>
       </div>
     </section>
 
-    <hr class="divider" />
-
-    <!-- CALCULATOR -->
-    <section class="section wrap">
-      <form class="rechner-grid" data-rechner novalidate>
-        <!-- inputs -->
-        <div class="rc-panel reveal">
-          <div class="rc-field">
-            <label for="rc-bezirk" data-i18n="rc.f.bezirk">Lage / Bezirk</label>
-            <select id="rc-bezirk">
-              <option value="mitte">Mitte</option>
-              <option value="cw" selected>Charlottenburg-Wilmersdorf</option>
-              <option value="fk">Friedrichshain-Kreuzberg</option>
-              <option value="pankow">Pankow / Prenzlauer Berg</option>
-              <option value="ts">Tempelhof-Schöneberg</option>
-              <option value="sz">Steglitz-Zehlendorf</option>
-              <option value="neukoelln">Neukölln</option>
-              <option value="tk">Treptow-Köpenick</option>
-              <option value="licht">Lichtenberg</option>
-              <option value="mh">Marzahn-Hellersdorf</option>
-              <option value="rd">Reinickendorf</option>
-              <option value="spandau">Spandau</option>
-            </select>
-          </div>
-          <div class="rc-field">
-            <label for="rc-art" data-i18n="rc.f.art">Objektart</label>
-            <select id="rc-art">
-              <option value="wohnung" data-i18n="rc.art.wohnung">Wohnung</option>
-              <option value="haus" data-i18n="rc.art.haus">Haus</option>
-              <option value="mfh" data-i18n="rc.art.mfh">Mehrfamilienhaus</option>
-              <option value="gewerbe" data-i18n="rc.art.gewerbe">Gewerbe</option>
-            </select>
-          </div>
-          <div class="rc-field">
-            <label for="rc-area" data-i18n="rc.f.area">Wohnfläche (m²)</label>
-            <input id="rc-area" type="number" inputmode="numeric" min="10" max="5000" step="1" value="120" />
-          </div>
-          <div class="rc-field">
-            <label for="rc-rooms" data-i18n="rc.f.rooms">Zimmer</label>
-            <input id="rc-rooms" type="number" inputmode="numeric" min="1" max="30" step="1" value="4" />
-          </div>
-          <div class="rc-field rc-field--full">
-            <label for="rc-cond" data-i18n="rc.f.condition">Zustand</label>
-            <select id="rc-cond">
-              <option value="neu" data-i18n="rc.cond.neu">Neuwertig / Neubau</option>
-              <option value="saniert" data-i18n="rc.cond.saniert">Saniert</option>
-              <option value="gepflegt" selected data-i18n="rc.cond.gepflegt">Gepflegt</option>
-              <option value="reno" data-i18n="rc.cond.reno">Renovierungsbedürftig</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- result -->
-        <aside class="rc-result reveal" data-delay="1">
-          <span class="rc-result-label" data-i18n="rc.result.label">Geschätzter Marktwert</span>
-          <div class="rc-value" id="rc-value">—</div>
-          <div class="rc-perm2-row">
-            <span data-i18n="rc.result.perm2">Richtwert pro m²</span>
-            <b id="rc-perm2">—</b>
-          </div>
-          <p class="rc-hint" data-i18n="rc.result.hint">Unverbindliche Schätzung auf Basis von Durchschnittswerten. Kein Wertgutachten.</p>
-          <a href="zugang.html" class="btn btn--on-dark rc-cta" data-i18n="rc.cta.btn">Bewertung anfragen
-            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </aside>
-      </form>
+    <section class="sec sand">
+      <div class="wrap">
+        <div class="head"><h2>So geht es weiter</h2><p>Der Rechner ist ein erster Schritt. Den genauen Wert ermitteln wir gemeinsam mit Ihnen.</p></div>
+        <ol class="steps">
+          <li><h3>Erste Spanne</h3><p>Sie sehen sofort, in welchem Bereich Ihre Immobilie ungefähr liegt.</p></li>
+          <li><h3>Termin vor Ort</h3><p>Wir sehen uns Zustand, Ausstattung und Lage genau an.</p></li>
+          <li><h3>Realistischer Preis</h3><p>Sie erhalten einen begründeten Preis und eine Einschätzung zum Verkauf.</p></li>
+          <li><h3>Ihre Entscheidung</h3><p>Ob und wann Sie verkaufen, entscheiden Sie in Ruhe. Die Bewertung ist unverbindlich.</p></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section cta-sec">
-      <div class="wrap cta-band reveal">
-        <span class="cta-rule" aria-hidden="true"></span>
-        <span class="eyebrow eyebrow--plain" style="justify-content:center" data-i18n="rc.eyebrow">Immobilien-Wertrechner</span>
-        <h2 class="h1" style="margin-top:22px" data-i18n="rc.cta.title">Möchten Sie eine präzise Bewertung?</h2>
-        <p class="lead" data-i18n="rc.cta.body">Wir bewerten Ihre Immobilie individuell und diskret — mit echtem Marktzugang statt Standard-Tool.</p>
-        <div class="actions">
-          <a href="zugang.html" class="btn" data-i18n="rc.cta.btn">Bewertung anfragen
-            <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <section class="sec">
+      <div class="wrap">
+        <div class="rg-more-head"><h2>Mehr zur Bewertung</h2><a class="link" href="/lexikon.html">Alle Artikel im Ratgeber</a></div>
+        <div class="rg-grid">
+          <a class="rg-card" href="/lexikon/immobilie-geerbt-verkaufen.html" data-art="erben">
+            <div class="rg-img"><img src="/assets/verkaufen/obj-efh.webp" alt="Wohnhaus am Wasser" width="900" height="640" loading="lazy"></div>
+            <div class="rg-b">
+              <p class="rg-meta"><span class="rg-cat">Erben</span><span>2 Min. Lesezeit</span></p>
+              <h3>Immobilie geerbt: Was jetzt zu tun ist</h3>
+              <p>Grundbuch, Erbengemeinschaft, Fristen und Steuern: was Sie nach einer Erbschaft früh klären sollten.</p>
+              <span class="more">Weiterlesen</span>
+            </div>
           </a>
-          <a href="kontakt.html" class="btn btn--ghost" data-i18n="cta.contact">Kontakt</a>
+          <a class="rg-card" href="/lexikon/immobilienbewertung.html" data-art="bewerten">
+            <div class="rg-img"><img src="/assets/verkaufen/unterlagen.webp" alt="Grundrisse und Pläne auf einem Tisch" width="900" height="1200" loading="lazy"></div>
+            <div class="rg-b">
+              <p class="rg-meta"><span class="rg-cat">Bewerten</span><span>2 Min. Lesezeit</span></p>
+              <h3>Immobilienbewertung: So entsteht ein realistischer Preis</h3>
+              <p>Die drei üblichen Verfahren, was den Preis bestimmt und was ein Online-Rechner leisten kann.</p>
+              <span class="more">Weiterlesen</span>
+            </div>
+          </a>
+          <a class="rg-card" href="/lexikon/risiken-beim-immobilienverkauf.html" data-art="verkaufen">
+            <div class="rg-img"><img src="/assets/ablauf-notar.webp" alt="Unterschrift unter einem Vertrag" width="900" height="1350" loading="lazy"></div>
+            <div class="rg-b">
+              <p class="rg-meta"><span class="rg-cat">Verkaufen</span><span>2 Min. Lesezeit</span></p>
+              <h3>Risiken beim Immobilienverkauf: Das sollten Sie vermeiden</h3>
+              <p>Falscher Startpreis, fehlende Unterlagen, unsichere Käufer: die häufigsten Fehler und wie Sie sie umgehen.</p>
+              <span class="more">Weiterlesen</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
+  
+  <footer class="foot">
     <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="display" style="font-family:var(--serif)">Abraham</div>
-          <p data-i18n="footer.tagline">Der Zugangspunkt zu Immobilien, die den öffentlichen Markt nie erreichen. Berlin und darüber hinaus — diskret, vernetzt, substanzstark.</p>
-          <div class="footer-social" style="margin-top:26px">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.3"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
-          </div>
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="foot-logo" href="/" aria-label="Abraham Immobilien"><img src="/assets/logo.webp" alt="Abraham Immobilien" width="92" height="92" loading="lazy"></a>
+          <p class="foot-addr">Abraham Immobilien GmbH &amp; Co. KG<br>Kurfürstendamm 15, 10719 Berlin<br><a href="tel:+493045032807">030 / 45032807</a><br><a href="mailto:angebote@abraham-immobilien.de">angebote@abraham-immobilien.de</a></p>
         </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.explore">Navigation</h4>
+        <div>
+          <h2>Immobilie verkaufen</h2>
           <ul>
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="zugang.html" data-i18n="nav.access">Off-Market Zugang</a></li>
-            <li><a href="ueber-uns.html" data-i18n="nav.about">Über uns</a></li>
-            <li><a href="leistungen.html" data-i18n="nav.services">Leistungen</a></li>
-            <li><a href="rechner.html" data-i18n="nav.calc">Preisrechner</a></li>
-            <li><a href="market.html" data-i18n="nav.market">Market</a></li>
-            <li><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="/wohnung-haus-verkaufen.html?art=wohnung#anfrage">Wohnung verkaufen</a></li>
+            <li><a href="/wohnung-haus-verkaufen.html?art=haus#anfrage">Haus verkaufen</a></li>
+            <li><a href="/wohnung-haus-verkaufen.html?art=grundstueck#anfrage">Grundstück verkaufen</a></li>
+            <li><a href="/diskret-verkaufen.html">Mehrfamilienhaus verkaufen</a></li>
+            <li><a href="/diskret-verkaufen.html">Gewerbeimmobilie verkaufen</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.contact">Kontakt</h4>
+        <div>
+          <h2>Off-Market</h2>
           <ul>
-            <li><a href="mailto:angebote@abraham-immobilien.de">angebote@abraham-immobilien.de</a></li>
-            <li><a href="tel:+493045032807">030 / 45032807</a></li>
-            <li>Kurfürstendamm 15<br/>10719 Berlin</li>
+            <li><a href="/diskret-verkaufen.html">Diskreter Verkauf</a></li>
+            <li><a href="/referenzen.html">Referenzen</a></li>
+            <li><a href="/wertermittlung.html">Anlageimmobilie bewerten</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Service</h2>
+          <ul>
+            <li><a href="/rechner.html">Immobilie bewerten</a></li>
+            <li><a href="/angebote.html">Aktuelle Angebote</a></li>
+            <li><a href="/lexikon.html">Ratgeber</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Unternehmen</h2>
+          <ul>
+            <li><a href="/ueber-uns.html">Über uns</a></li>
+            <li><a href="/kontakt.html">Kontakt</a></li>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2025</span> Abraham Immobilien. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></span>
-        <span class="footer-credit"><span data-i18n="footer.dev">Webdesign &amp; Entwicklung by</span> <a href="https://techlacin.de" target="_blank" rel="noopener">TECHLACIN</a></span>
-        <span class="footer-legal">
-          <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
-          <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
-        </span>
+      <div class="foot-b">
+        <span>© <span data-year>2026</span> Abraham Immobilien GmbH &amp; Co. KG</span>
+        <nav aria-label="Rechtliches"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="https://techlacin.de" target="_blank" rel="noopener">Webdesign: TECHLACIN</a></nav>
       </div>
     </div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </body>
 </html>
